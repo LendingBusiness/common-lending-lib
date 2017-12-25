@@ -35,8 +35,9 @@ public class Party {
     @Override
     public String toString() {
         StringBuilder funds = new StringBuilder();
-        availableFunds.forEach(f -> {
-            funds.append(f.toString() + ", ");
+        availableFunds.forEach((Fund f) -> {
+            funds.append(f.toString());
+            funds.append(", ");
         });
         return "Party{" +
                 "name='" + name + '\'' +
