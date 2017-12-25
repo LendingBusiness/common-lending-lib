@@ -23,6 +23,11 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>org.kd</id>
+            <name>math2</name>
+            <url>file:C:/Users/KDRZAZGA/.m2/repository</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -33,6 +38,11 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.kd</groupId>
+            <artifactId>math2</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>
