@@ -4,7 +4,7 @@ import org.kd.Generator;
 
 public class Trade {
 
-    enum State {NEW, BOOKED, SETTLED
+    public enum State {NEW, BOOKED, SETTLED
         , RETURN_BOOKED, RETURN_SETTLED
         , CLOSED}
 
@@ -32,7 +32,6 @@ public class Trade {
         this.id = Generator.generateId();
         this.state = State.NEW;
     }
-
 
     public String getId() {
         return id;

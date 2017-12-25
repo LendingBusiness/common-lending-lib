@@ -16,6 +16,18 @@ public class Party {
         this.availableFunds = availableFunds;
     }
 
+    public void addAvailableFund(Fund newFund) {
+        this.availableFunds.add(newFund);
+    }
+
+    public double computeAvailableUnits() {
+        double allUnits = 0;
+        for (Fund fund : this.availableFunds) {
+            allUnits += fund.getUnits();
+        }
+        return allUnits;
+    }
+
     public String getName() {
         return name;
     }
