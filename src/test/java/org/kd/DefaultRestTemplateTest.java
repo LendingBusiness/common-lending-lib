@@ -16,13 +16,10 @@ import static org.springframework.util.Assert.notNull;
 @ComponentScan(basePackageClasses = RestTemplateConfig.class)
 public class DefaultRestTemplateTest {
 
-    @Autowired
-    private RestTemplate restTemplate;
-
     @Test
     public void createDefaultRestTemplateTest() {
-        //ApplicationContext ctx = new AnnotationConfigApplicationContext(RestTemplateConfig.class);
-        //RestTemplate restTemplate = ctx.getBean(RestTemplate.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(RestTemplateConfig.class);
+        RestTemplate restTemplate = ctx.getBean(RestTemplate.class);
 
         notNull(restTemplate, "Rest Template from Bean is null");
     }

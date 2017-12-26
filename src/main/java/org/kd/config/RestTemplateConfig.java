@@ -16,6 +16,12 @@ public class RestTemplateConfig {
 
     @Bean
     public RestTemplate createDefaultRestTemplate(RestTemplateBuilder restTemplateBuilder) {
-        return restTemplateBuilder.build();//.rootUri(host.concat(":").concat(serverPort)).build();
+        return restTemplateBuilder.rootUri(host.concat(":").concat(serverPort)).build();
+    }
+
+    @Bean(name = "restTemplateBuilder")
+    public RestTemplateBuilder restTemplateBuilder() {
+        RestTemplateBuilder builder = new RestTemplateBuilder();
+        return builder;
     }
 }
