@@ -6,9 +6,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.logging.Logger;
-
-public class LendingRequestWrapper {
+public final class LendingRequestWrapper {
 
     @Autowired
     private RestTemplate restTemplate;
@@ -19,8 +17,6 @@ public class LendingRequestWrapper {
     private int responseCode;
     private String responseBody;
     private String responseHeader;
-
-    private final static Logger logger = Logger.getLogger(LendingRequestWrapper.class.getName());
 
     public void send(String host, String endPoint, HttpMethod method) {
         HttpEntity<String> entity = new HttpEntity<>("parameters", headers);

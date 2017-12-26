@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Logger;
 
-public class Generator {
+public final class Generator {
 
     private static short prefix = 0;
     private static final Logger logger = Logger.getLogger(Generator.class.getName());

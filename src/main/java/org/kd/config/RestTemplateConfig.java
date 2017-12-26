@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
-public class RestTemplateConfig {
+public final class RestTemplateConfig {
 
     @Value("${server.port}")
     private String serverPort;
@@ -21,7 +21,6 @@ public class RestTemplateConfig {
 
     @Bean(name = "restTemplateBuilder")
     public RestTemplateBuilder restTemplateBuilder() {
-        RestTemplateBuilder builder = new RestTemplateBuilder();
-        return builder;
+        return new RestTemplateBuilder();
     }
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.kd.math2.Numbers;
 
-public class GeneratorTest {
+public final class GeneratorTest {
 
     @Test
     public void testGenerateIdCreatesUniqueIds() {

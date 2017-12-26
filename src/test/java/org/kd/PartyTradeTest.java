@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.*;
 
-public class PartyTradeTest {
+public final class PartyTradeTest {
 
     @Test
     public void createTradeTest() {

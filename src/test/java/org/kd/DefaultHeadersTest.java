@@ -12,7 +12,7 @@ import static org.springframework.util.Assert.isTrue;
 import static org.springframework.util.Assert.notNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-public class DefaultHeadersTest {
+public final class DefaultHeadersTest {
 
     @Test
     public void testHeadersCreation() {
