@@ -2,6 +2,7 @@ package org.kd;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.kd.config.RequestWrapperConfig;
 import org.kd.config.RestTemplateConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -17,7 +18,7 @@ public final class DefaultRestTemplateTest {
 
     @Test
     public void createDefaultRestTemplateTest() {
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(RestTemplateConfig.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(RequestWrapperConfig.class);
         RestTemplate restTemplate = ctx.getBean(RestTemplate.class);
 
         notNull(restTemplate, "Rest Template from Bean is null");

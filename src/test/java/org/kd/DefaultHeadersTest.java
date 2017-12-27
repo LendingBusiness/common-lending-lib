@@ -3,6 +3,8 @@ package org.kd;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.kd.config.HeadersConfig;
+import org.kd.config.RequestWrapperConfig;
+import org.kd.service.LendingRequestWrapper;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.http.HttpHeaders;
@@ -16,10 +18,13 @@ public final class DefaultHeadersTest {
 
     @Test
     public void testHeadersCreation() {
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(HeadersConfig.class);
-        HttpHeaders headers = ctx.getBean(HttpHeaders.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+        ctx.register(RequestWrapperConfig.class);
+        ctx.refresh();
 
-        notNull(headers, "Headers null");
-        isTrue(!headers.isEmpty(), "Empty headers");
+        LendingRequestWrapper wrapper = ctx.getBean(LendingRequestWrapper.class);
+
+        notNull(wrapper.getResponseHeader(), "Headers null");
+        //isTrue(!headers.isEmpty(), "Empty headers");
     }
 }

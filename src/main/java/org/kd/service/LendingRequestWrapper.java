@@ -10,8 +10,6 @@ public final class LendingRequestWrapper {
 
     @Autowired
     private RestTemplate restTemplate;
-
-    @Autowired
     private HttpHeaders headers;
 
     private int responseCode;
@@ -21,6 +19,11 @@ public final class LendingRequestWrapper {
     public void send(String host, String endPoint, HttpMethod method) {
         HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
         restTemplate.exchange(host.concat(endPoint), method, entity, String.class);
+    }
+
+    @Autowired
+    void setHeaders(HttpHeaders headers){
+        this.headers = headers;
     }
 
     public int getResponseCode() {

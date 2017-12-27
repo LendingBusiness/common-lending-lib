@@ -6,10 +6,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 
 @Configuration
-public final class HeadersConfig {
+public class HeadersConfig {
 
     @Bean
-    public HttpHeaders createDefaultHeaders() {
+    public HttpHeaders getHeaders() {
         HttpHeaders headers = new HttpHeaders();
         headers.set("Accept", "application/json");
         headers.setContentType(MediaType.APPLICATION_JSON);
