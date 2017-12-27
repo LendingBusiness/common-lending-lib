@@ -15,7 +15,6 @@ public class RequestWrapperConfig {
         return new LendingRequestWrapper();
     }
 
-
     @Value("${server.port}")
     private String serverPort;
     @Value("${server.host}")
