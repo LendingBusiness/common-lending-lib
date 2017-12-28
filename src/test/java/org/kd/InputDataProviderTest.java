@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.kd.config.AppConfig;
+import org.kd.helpclasses.JsonFileContent;
 import org.kd.service.InputDataProvider;
 import org.kd.service.LendingRequestWrapper;
 import org.slf4j.Logger;
@@ -63,10 +64,15 @@ public class InputDataProviderTest {
         }
     }
 
-    private class JsonFileContent{
-        public String key1;
-        public String key2;
-        public String key3;
+    @Test
+    public void testGetDataByFileNameAsObject(){
+        try {
+            JsonFileContent jsonFileContent = testInputDataProvider.getDataByFileNameAsObject("data.json", JsonFileContent.class);
+            isTrue(jsonFileContent.key1.contains("value1"), "mapping error");
+            isTrue(jsonFileContent.key2.contains("value2"), "mapping error");
+            isTrue(jsonFileContent.key3.contains("value3"), "mapping error");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
 }

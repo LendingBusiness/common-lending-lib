@@ -34,7 +34,7 @@ public final class LendingRequestWrapper {
         logger.info("Created {} for app {} with main endpoint {}", LendingRequestWrapper.class.getSimpleName(), appName, mainEndpoint);
     }
 
-    public void sendRequest(HttpMethod method, String requestBody, String relativeRequestUrl, Map<String, String> headers) {
+    public void sendRequest(HttpMethod method, String requestBody, String relativeRequestUrl) {
         String requestUrl = host.concat(mainEndpoint).concat(relativeRequestUrl);
         this.requestBody = requestBody;
         logRequest(method, requestBody, requestUrl);

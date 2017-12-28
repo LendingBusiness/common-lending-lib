@@ -10,7 +10,7 @@ public final class GeneratorTest {
 
     @Test
     public void testGenerateIdCreatesUniqueIds() {
-        int idsAmount = Numbers.roundToInt(3 * Math.pow(10, 4));
+        int idsAmount = Numbers.roundToInt(1.5 * Math.pow(10, 4));
         List<String> ids = new ArrayList<>(idsAmount);
         for (int i = 0; i < idsAmount; i++) {
             String id = Generator.generateId();
