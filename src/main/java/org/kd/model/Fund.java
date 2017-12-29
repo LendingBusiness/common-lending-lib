@@ -1,6 +1,7 @@
 package org.kd.model;
 
 public class Fund {
+    private String id;
     private String name;
     private int units;
 
