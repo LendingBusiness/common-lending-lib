@@ -5,9 +5,6 @@ public enum Operation {
 
     @Override
     public String toString() {
-        if (this.equals(BORROW))
-            return "borrow";
-        else
-            return "lend";
+        return this.equals(BORROW) ? "borrow" : "lend";
     }
 }
