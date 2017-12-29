@@ -10,8 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Map;
-
 public final class LendingRequestWrapper {
 
     @Autowired
@@ -34,8 +32,8 @@ public final class LendingRequestWrapper {
         logger.info("Created {} for app {} with main endpoint {}", LendingRequestWrapper.class.getSimpleName(), appName, mainEndpoint);
     }
 
-    public void sendRequest(HttpMethod method, String requestBody, String relativeRequestUrl) {
-        String requestUrl = host.concat(mainEndpoint).concat(relativeRequestUrl);
+    public void sendRequest(HttpMethod method, String requestBody, String parameters) {
+        String requestUrl = host.concat(mainEndpoint).concat(parameters);
         this.requestBody = requestBody;
         logRequest(method, requestBody, requestUrl);
 
@@ -80,4 +78,19 @@ public final class LendingRequestWrapper {
     }
 
 
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public String getMainEndpoint() {
+        return mainEndpoint;
+    }
+
+    public void setMainEndpoint(String mainEndpoint) {
+        this.mainEndpoint = mainEndpoint;
+    }
 }

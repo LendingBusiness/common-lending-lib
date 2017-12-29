@@ -1,7 +1,6 @@
 package org.kd.config;
 
 import org.kd.service.InputDataProvider;
-import org.kd.service.LendingRequestWrapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
@@ -12,11 +11,6 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class AppConfig {
-
-    @Bean
-    public LendingRequestWrapper getLendingRequestWrapper() {
-        return new LendingRequestWrapper("testApp", "testEndpoint");
-    }
 
     @Value("${server.port}")
     private String serverPort;
@@ -43,7 +37,7 @@ public class AppConfig {
     }
 
     @Bean
-    public InputDataProvider createInputDataProvider(){
+    public InputDataProvider createInputDataProvider() {
         return new InputDataProvider();
     }
 }
