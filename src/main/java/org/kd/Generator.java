@@ -13,7 +13,6 @@ public final class Generator {
     private static final Logger logger = Logger.getLogger(Generator.class.getName());
 
     private Generator(){
-
     }
 
     public static String generateId() {

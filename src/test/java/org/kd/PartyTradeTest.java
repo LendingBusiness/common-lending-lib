@@ -14,8 +14,6 @@ public final class PartyTradeTest {
 
     @Test
     public void createTradeTest() {
-
-
         List<Fund> availableFunds = new ArrayList<>(1);
         Fund f1 = new Fund("Fund1", 100);
         List<Fund> borrowFund = Arrays.asList(new Fund("Fund1", 12));
