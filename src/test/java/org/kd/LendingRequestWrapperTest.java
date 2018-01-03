@@ -14,6 +14,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import static org.kd.service.ServiceRegistry.AppName;
 import static org.springframework.util.Assert.isTrue;
 import static org.springframework.util.Assert.notNull;
 
@@ -41,8 +42,8 @@ public class LendingRequestWrapperTest {
 
     @Test
     public void testReturnedValue() {
-        int port = ServiceRegistry.getAppPort("app");
-        WireMockServerWrapper.start(port);
+        String port = AppName.PARTY_MANAGEMENT.getPort();
+        WireMockServerWrapper.start(Integer.parseInt(port));
         wrapper.sendRequest(HttpMethod.GET, "", "");
         WireMockServerWrapper.stop();
 
@@ -54,8 +55,8 @@ public class LendingRequestWrapperTest {
 
     @Test
     public void testGetMethod() {
-        int port = ServiceRegistry.getAppPort("app");
-        WireMockServerWrapper.start(port);
+        String port = AppName.PARTY_MANAGEMENT.getPort();
+        WireMockServerWrapper.start(Integer.parseInt(port));
         wrapper.setMainEndpoint("/hello");
         wrapper.sendRequest(HttpMethod.GET, "", "/?param1=value1");
         WireMockServerWrapper.stop();

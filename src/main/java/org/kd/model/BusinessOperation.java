@@ -1,6 +1,6 @@
 package org.kd.model;
 
-public enum Operation {
+public enum BusinessOperation {
     BORROW, LEND;
 
     @Override

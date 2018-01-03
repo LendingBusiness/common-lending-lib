@@ -13,7 +13,7 @@ public class Trade {
     private String id;
     private Party destParty;
     private Party originParty;
-    private Operation operation;
+    private BusinessOperation businessOperation;
     private List<Fund> fundUnits;
     private State state;
     private Date bookDate;
@@ -25,12 +25,12 @@ public class Trade {
         init();
     }
 
-    public Trade(Party originParty, Party destParty, Operation operation, List<Fund> fundUnits) {
+    public Trade(Party originParty, Party destParty, BusinessOperation businessOperation, List<Fund> fundUnits) {
         init();
         this.id = Generator.generateId();
         this.originParty = originParty;
         this.destParty = destParty;
-        this.operation = operation;
+        this.businessOperation = businessOperation;
         this.fundUnits = fundUnits;
     }
 
@@ -51,8 +51,8 @@ public class Trade {
         return destParty;
     }
 
-    public Operation getOperation() {
-        return operation;
+    public BusinessOperation getBusinessOperation() {
+        return businessOperation;
     }
 
     public List<Fund> getFundUnits() {

@@ -2,7 +2,7 @@ package org.kd;
 
 import org.junit.Test;
 import org.kd.model.Fund;
-import org.kd.model.Operation;
+import org.kd.model.BusinessOperation;
 import org.kd.model.Party;
 import org.kd.model.Trade;
 import java.util.ArrayList;
@@ -22,13 +22,13 @@ public final class PartyTradeTest {
         Party p1 = new Party("Party1", availableFunds);
         Party p2 = new Party("Party2", availableFunds);
 
-        Trade trade = new Trade(p1, p2, Operation.BORROW, borrowFund);
+        Trade trade = new Trade(p1, p2, BusinessOperation.BORROW, borrowFund);
 
         assertNotNull(trade.getId());
         assertNotEquals("", trade.getId());
         assertEquals(12, trade.getFundUnits().get(0).getUnits());
         assertEquals(Trade.State.NEW, trade.getState());
-        assertEquals("borrow", trade.getOperation().toString());
+        assertEquals("borrow", trade.getBusinessOperation().toString());
         double margin = 0.1d;
         assertEquals(100d, trade.getOriginParty().computeAvailableUnits(), margin);
         trade.getOriginParty().addAvailableFund(f1);

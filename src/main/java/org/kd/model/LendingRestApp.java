@@ -1,8 +1,11 @@
 package org.kd.model;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import static org.kd.service.ServiceRegistry.AppName;
 
 public abstract class LendingRestApp {
+
+    protected static AppName appName;
 
     protected static ConfigurableApplicationContext context;
 

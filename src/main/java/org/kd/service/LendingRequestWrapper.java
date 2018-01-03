@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
+import static org.kd.service.ServiceRegistry.AppName;
+
 public final class LendingRequestWrapper {
 
     @Autowired
@@ -26,7 +28,7 @@ public final class LendingRequestWrapper {
 
     private static final Logger logger = LoggerFactory.getLogger(LendingRequestWrapper.class);
 
-    public LendingRequestWrapper(String appName, String mainEndpoint) {
+    public LendingRequestWrapper(AppName appName, String mainEndpoint) {
         this.host = ServiceRegistry.getServiceUrl(appName);
         this.mainEndpoint = mainEndpoint;
         logger.info("Created {} for app {} with main endpoint {}", LendingRequestWrapper.class.getSimpleName(), appName, mainEndpoint);
