@@ -1,6 +1,6 @@
 package org.kd.model;
 
-public class Fund {
+public class Fund implements LegalEntity{
     private String id;
     private String name;
     private int units;
@@ -15,6 +15,11 @@ public class Fund {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String getId() {
+        return this.id;
     }
 
     public int getUnits() {

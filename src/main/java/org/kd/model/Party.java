@@ -1,11 +1,11 @@
 package org.kd.model;
 
-import org.kd.Generator;
+import org.kd.misc.Generator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Party {
+public class Party implements LegalEntity{
     private String name;
     private String id;
     private String externalId;

@@ -1,4 +1,4 @@
-package org.kd;
+package org.kd.misc;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;

@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 import org.kd.math2.Numbers;
+import org.kd.misc.Generator;
 
 public final class GeneratorTest {
 

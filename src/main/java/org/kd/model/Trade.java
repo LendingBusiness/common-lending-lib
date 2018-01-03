@@ -1,6 +1,6 @@
 package org.kd.model;
 
-import org.kd.Generator;
+import org.kd.misc.Generator;
 import java.util.Date;
 import java.util.List;
 
